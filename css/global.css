@@ -1,0 +1,105 @@
+/* Base Theme ============================================================= */
+/* Reset ------------------------------------------------------------------ */
+/*
+    global.css - resets default browser styling
+    http://tantek.com/log/2004/09.html#d06t2354
+    http://www.vox.com/.shared/css/base.css by beausmith.com
+    http://developer.yahoo.com/yui/reset/
+*/
+:link, :visited {
+    text-decoration: none;
+}
+
+html, body, div, ul, ol, li, dl, dt, dd, form, fieldset, input, textarea, h1, h2, h3, h4, h5, h6, pre, code, p, blockquote, hr, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+table {
+    border-spacing: 0;
+}
+
+fieldset, img, abbr, acronym {
+    border: 0;
+}
+
+/* strict reset by uncommenting lines below */
+address, caption, cite, code, dfn, em, strong, b, u, s, i, th, var {
+    /* font-style: normal; */
+    /* font-weight: normal; */
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+a {
+    text-decoration: underline;
+    outline: none;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    color: #000;
+}
+
+a img, :link img, :visited img {
+    border: none;
+}
+
+address {
+    font-style: normal;
+    display: inline;
+}
+
+body {
+    background: #D5E9F5;
+    color: #556677;
+    margin:0;
+    padding:0;
+    font-family: Georgia, '微软雅黑', serif;
+    letter-spacing: -0.01em;
+    word-spacing:0.2em;
+    line-height: 1.8em;
+    width:98%;
+}
+body a:link,body a:visited{
+    color: blue;
+}
+body a:hover{
+    color: #f00;
+}
+.container {
+    width: 980px;
+    margin: 0 auto;
+}
+.container header{
+    padding:20px 0;
+    text-indent:0.5em;
+    font-size: 1.8em;
+    border-bottom: 1px solid #ccc;
+}
+.container .content{
+    padding: 1em;
+}
+footer{
+    text-align: right;
+    padding:20px 0;
+    padding-right:1em;
+    border-top: 1px solid #ccc;
+}
