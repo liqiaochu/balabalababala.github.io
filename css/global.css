@@ -70,36 +70,45 @@ address {
 body {
     background: #D5E9F5;
     color: #556677;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     font-family: Georgia, '微软雅黑', serif;
     letter-spacing: -0.01em;
-    word-spacing:0.2em;
+    word-spacing: 0.2em;
     line-height: 1.8em;
-    width:98%;
+    width: 98%;
 }
-body a:link,body a:visited{
+
+body a:link, body a:visited {
     color: blue;
 }
-body a:hover{
+
+body a:hover {
     color: #f00;
 }
+
 .container {
     width: 980px;
     margin: 0 auto;
 }
-.container header{
-    padding:20px 0;
-    text-indent:0.5em;
+
+.container header {
+    padding: 20px 0;
+    text-indent: 0.5em;
     font-size: 1.8em;
     border-bottom: 1px solid #ccc;
 }
-.container .content{
+
+.container header a, .container header a:link {
+    color: #556677;
+}
+.container .content {
     padding: 1em;
 }
-footer{
+
+footer {
     text-align: right;
-    padding:20px 0;
-    padding-right:1em;
+    padding: 20px 0;
+    padding-right: 1em;
     border-top: 1px solid #ccc;
 }

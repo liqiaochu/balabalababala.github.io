@@ -2,10 +2,66 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>babalabalabala的网站</title>
-    <link href="../css/global.css" rel="stylesheet" />
+    <title>node-selenium学习笔记</title>
+    <meta name="description" content="babalabalabala的网站"/>
+    <meta name="keyword" content="babalabalabala的网站"/>
+    <link rel="icon" href="../img/favicon.ico" mce_href="../img/favicon.ico" type="image/x-icon"/>
+    <link href="../css/global.css" rel="stylesheet"/>
+    <link href="./css/index.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="container">
+    <header><a href="../index.html" title="BABALA的网站">BABALA&nbsp;的网站</a></header>
 
+    <div class="content">
+        <h1>node-selenium学习笔记</h1>
+
+        <p>一个简单的例子</p>
+        <code>
+            <pre>
+var fs = require('fs');
+var userInfo = require('./private');
+var webdriver = require('selenium-webdriver');
+
+var driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
+
+driver.get('http://www.1688.com/');
+
+driver.findElement(webdriver.By.className('account-signin')).click().then(function () {
+    driver.getAllWindowHandles().then(function(handles){
+        console.log(handles);
+    });
+    //截屏，现在还不知道获得的字符串如何使用
+    driver.takeScreenshot(3).then(function(string){
+        console.log(string);
+    });
+    var targetLocator = new webdriver.WebDriver.TargetLocator(driver);
+    //获取iframe
+    targetLocator.frame(0).then(function(){
+        driver.findElement(webdriver.By.tagName('body')).then(function(element){
+            element.getInnerHtml().then(function(html){
+                //console.log(html);
+                driver.findElement(webdriver.By.id('J_SafeLoginCheck')).click();
+                driver.findElement(webdriver.By.id('TPL_username_1')).sendKeys(userInfo.username);
+                driver.findElement(webdriver.By.id('TPL_password_1')).sendKeys(userInfo.password);
+                driver.findElement(webdriver.By.id('J_SubmitStatic')).click().then(function () {
+                    driver.findElement(webdriver.By.tagName('body')).then(function (element) {
+                        element.getInnerHtml().then(function (html) {
+                            console.log(html);
+                        });
+                    });
+                });
+            });
+        });
+    });
+});
+</pre>
+        </code>
+    </div>
+
+    <footer>
+        联系方式：babalabalabala@qq.com
+    </footer>
+</div>
 </body>
 </html>
