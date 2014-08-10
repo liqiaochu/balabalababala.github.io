@@ -1,0 +1,4 @@
+User-Agent: Baiduspider
+Allow: /node-selenium/index.html
+Allow: /index.html
+
