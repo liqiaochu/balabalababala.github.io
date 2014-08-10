@@ -68,7 +68,6 @@ address {
 }
 
 body {
-    background: #D5E9F5;
     color: #556677;
     margin: 0;
     padding: 0;
@@ -77,6 +76,7 @@ body {
     word-spacing: 0.2em;
     line-height: 1.8em;
     width: 98%;
+    font-size: 14px;
 }
 
 body a:link, body a:visited {
@@ -104,6 +104,7 @@ body a:hover {
 }
 .container .content {
     padding: 1em;
+    min-height: 400px;
 }
 
 footer {
@@ -111,4 +112,5 @@ footer {
     padding: 20px 0;
     padding-right: 1em;
     border-top: 1px solid #ccc;
+    font-size: 10px;
 }
