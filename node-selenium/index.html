@@ -16,48 +16,46 @@
 
     <div class="content">
         <h1>node-selenium学习笔记</h1>
+        <h2>环境搭建</h2>
+        <h3>1、下载 ChromeDriver</h3>
+        <p>点击<a href="https://code.google.com/p/chromedriver/downloads/list" target="_blank">下载</a> 如果不能下载，可以到跟我联系</p>
+        <h3>2、配置环境变量</h3>
+        <p>下载下来了，将文件保存到某个目录，然后将此路径添加到环境变量中<br/>
+        <img src="./img/1.png" /><br/>
+        <img src="./img/3.png" />
+        </p>
 
-        <p>一个简单的例子</p>
+        <h3>3、安装nodejs</h3>
+        <p>这个不多说了</p>
+        <h3>4、下载node-selenium</h3>
+        <p>新建开发目录，在此目录打开命令行工具，输入命令npm install selenium-webdriver<br/>
+        <img src="./img/2.png" /></p>
+        <h3>5、开发代码测试</h3>
+        <p>官网给的例子是那google开到，在国内就用百度开刀吧，下面是一个简单的例子</p>
         <pre>
             <code class="javascript">
-var fs = require('fs');
-var userInfo = require('./private');
 var webdriver = require('selenium-webdriver');
+
 var driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
 
-driver.get('http://www.1688.com/');
-driver.findElement(webdriver.By.className('account-signin')).click().then(function () {
-    driver.getAllWindowHandles().then(function(handles){
-        console.log(handles);
+driver.get('http://www.baidu.com/');
+
+driver.findElement(webdriver.By.id('kw1')).click();
+driver.findElement(webdriver.By.id('kw1')).sendKeys('http://balabalababala.github.io/');
+driver.findElement(webdriver.By.id('su1')).click();
+driver.wait(function() {
+    return driver.getTitle().then(function(title) {
+        console.log(title);
+        return true;
     });
-    //截屏，现在还不知道获得的字符串如何使用
-    driver.takeScreenshot(3).then(function(string){
-        console.log(string);
-    });
-    var targetLocator = new webdriver.WebDriver.TargetLocator(driver);
-    //获取iframe
-    targetLocator.frame(0).then(function(){
-        driver.findElement(webdriver.By.tagName('body')).then(function(element){
-            element.getInnerHtml().then(function(html){
-                //console.log(html);
-                driver.findElement(webdriver.By.id('J_SafeLoginCheck')).click();
-                driver.findElement(webdriver.By.id('TPL_username_1')).sendKeys(userInfo.username);
-                driver.findElement(webdriver.By.id('TPL_password_1')).sendKeys(userInfo.password);
-                driver.findElement(webdriver.By.id('J_SubmitStatic')).click().then(function () {
-                    driver.findElement(webdriver.By.tagName('body')).then(function (element) {
-                        element.getInnerHtml().then(function (html) {
-                            console.log(html);
-                        });
-                    });
-                });
-            });
-        });
-    });
-});
-</code>
+}, 1000);
+//driver.quit();
+            </code>
         </pre>
     </div>
-
+    <div>
+        参考文档：<a href="https://code.google.com/p/selenium/wiki/WebDriverJs" target="_blank">https://code.google.com/p/selenium/wiki/WebDriverJs</a>
+    </div>
     <footer>
         联系方式：babalabalabala@qq.com
     </footer>
