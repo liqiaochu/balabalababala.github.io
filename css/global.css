@@ -83,6 +83,20 @@ body a:hover {
 }
 .container header a, .container header a:link {
     color: #556677;
+
+    text-shadow: 2px 0px 0px #fff,
+　　　　　　　　　-2px 0px 0px #fff,
+　　　　　　　　　0px 2px 0px #000,
+　　　　　　　　　0px -2px 0px #000;
+    -webkit-text-fill-color: #556677;
+    -webkit-text-stroke:1px #556677;
+    text-stroke:1px #556677;
+    text-shadow: #ccc 5px 5px 5px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #ccc, 0 0 70px #ccc;
+    /*-webkit-text-shadow:#556677 1px 0 0,#556677 0 1px 0,#556677 -1px 0 0,#556677 0 -1px 0;
+    -moz-text-shadow:#556677 1px 0 0,#556677 0 1px 0,#556677 -1px 0 0,#556677 0 -1px 0;
+    text-shadow:#556677 1px 0 0,#556677 0 1px 0,#556677 -1px 0 0,#556677 0 -1px 0;
+    *filter: Glow(Color=#556677, Strength=1);*/
 }
 .container .content {
     padding: 1em;
