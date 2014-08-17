@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>node-selenium学习笔记</title>
     <meta name="description" content="babalabalabala的网站"/>
-    <meta name="keyword" content="babalabalabala的网站"/>
+    <meta name="keyword" content="node-selenium selenium-webdriver"/>
     <link rel="icon" href="../img/favicon.ico" mce_href="../img/favicon.ico" type="image/x-icon"/>
     <link href="../css/global.css" rel="stylesheet"/>
     <link href="../css/highlight/dark.css" rel="stylesheet"/>
@@ -16,7 +16,7 @@
 
     <div class="content">
         <h1>node-selenium学习笔记</h1>
-        <h2>环境搭建</h2>
+        <p>下面是环境搭建的过程以及一个简单的例子，我的操作系统是64位win7企业版</p>
         <h3>1、下载 ChromeDriver</h3>
         <p>点击<a href="https://code.google.com/p/chromedriver/downloads/list" target="_blank">下载</a> 如果不能下载，可以到跟我联系</p>
         <h3>2、配置环境变量</h3>
@@ -26,12 +26,13 @@
         </p>
 
         <h3>3、安装nodejs</h3>
-        <p>这个不多说了</p>
-        <h3>4、下载node-selenium</h3>
+        <p>这个不多说了，可以到<a href="http://nodejs.org/" target="_blank">nodejs官网</a>，选择适合的版本进行安装 </p>
+        <h3>4、安装selenium-webdriver</h3>
         <p>新建开发目录，在此目录打开命令行工具，输入命令npm install selenium-webdriver<br/>
         <img src="./img/2.png" /></p>
-        <h3>5、开发代码测试</h3>
-        <p>官网给的例子是那google开刀，在国内就用百度开刀吧，下面是一个简单的例子</p>
+        <h3>5、开发代码</h3>
+        <p>官网给的例子是拿google开刀，在国内就用百度开刀吧，下面是一个简单的例子</p>
+        <p>app.js</p>
         <pre>
             <code class="javascript">
 var webdriver = require('selenium-webdriver');
@@ -52,9 +53,11 @@ driver.wait(function() {
 //driver.quit();
             </code>
         </pre>
-    </div>
-    <div>
-        参考文档：<a href="https://code.google.com/p/selenium/wiki/WebDriverJs" target="_blank">https://code.google.com/p/selenium/wiki/WebDriverJs</a>
+        <h3>6、运行代码</h3>
+        <p>node app.js</p>
+        <div class="ref">
+            参考文档：<a href="https://code.google.com/p/selenium/wiki/WebDriverJs" target="_blank">https://code.google.com/p/selenium/wiki/WebDriverJs</a>
+        </div>
     </div>
     <footer>
         联系方式：babalabalabala@qq.com

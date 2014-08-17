@@ -3,7 +3,8 @@
 /* global.css - resets default browser styling
 http://tantek.com/log/2004/09.html#d06t2354
 http://www.vox.com/.shared/css/base.css by beausmith.com
-http://developer.yahoo.com/yui/reset/ */:link, :visited {
+http://developer.yahoo.com/yui/reset/ */
+:link, :visited {
     text-decoration: none;
 }
 html, body, div, ul, ol, li, dl, dt, dd, form, fieldset, input, textarea, h1, h2, h3, h4, h5, h6, pre, code, p, blockquote, hr, th, td {
@@ -12,7 +13,7 @@ html, body, div, ul, ol, li, dl, dt, dd, form, fieldset, input, textarea, h1, h2
 }
 h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
-    font-weight: normal;
+    font-weight: bold;
 }
 table {
     border-spacing: 0;
@@ -23,10 +24,12 @@ fieldset, img, abbr, acronym {
 
 /* strict reset by uncommenting lines below */
 address, caption, cite, code, dfn, em, strong, b, u, s, i, th, var {
-    /* font-style: normal;
-    */
-    /* font-weight: normal;
-    */
+     /*font-style: normal;*/
+     /*font-weight: normal;*/
+}
+em{
+    font-weight: bold;
+    margin: 0 6px;
 }
 ol, ul {
     list-style: none;
@@ -111,4 +114,8 @@ footer {
     padding-right: 1em;
     border-top: 1px solid #ccc;
     font-size: 10px;
+}
+
+.ref{
+    padding-top: 40px;
 }
